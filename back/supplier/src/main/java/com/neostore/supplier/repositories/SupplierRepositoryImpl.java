@@ -4,9 +4,7 @@ import com.neostore.supplier.entities.Supplier;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-
 import javax.persistence.Persistence;
-import javax.persistence.Query;
 import java.util.List;
 
 public class SupplierRepositoryImpl implements SupplierRepository {
@@ -27,7 +25,6 @@ public class SupplierRepositoryImpl implements SupplierRepository {
 
     @Override
     public Supplier getSupplier(String cnpj) {
-        // Use uma consulta JPQL para buscar um fornecedor pelo CNPJ
         return em.createQuery("SELECT s FROM Supplier s WHERE s.cnpj = :cnpj", Supplier.class)
                 .setParameter("cnpj", cnpj)
                 .getSingleResult();
