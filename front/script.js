@@ -22,7 +22,7 @@ function displayMessage(message, targetElementId, messageType = 'success') {
     targetElement.innerHTML = `<div class="alert alert-${messageType}" role="alert">${message}</div>`;
     setTimeout(() => {
         targetElement.innerHTML = '';
-    }, 5000);
+    }, 10000);
 }
 
 function clearFields(fieldIds) {
@@ -32,13 +32,11 @@ function clearFields(fieldIds) {
 }
 
 function isValidCnpj(cnpj) {
-    // Expressão regular para validar CNPJ (formato: XX.XXX.XXX/XXXX-XX)
     const cnpjRegex = /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/;
     return cnpjRegex.test(cnpj);
 }
 
 function isValidEmail(email) {
-    // Expressão regular para validar e-mail
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
@@ -54,8 +52,12 @@ function addSupplier() {
         return;
     }
 
-    if (!isValidCnpj(cnpj) || !isValidEmail(email)) {
-        displayMessage('Invalid CNPJ or e-mail.', 'addSupplierMessage', 'danger');
+    if (!isValidCnpj(cnpj)) {
+        displayMessage('Invalid CNPJ! Must be like "xx.xxx.xxx/xxxx-xx"!', 'addSupplierMessage', 'danger');
+        return;
+    }
+    if (!isValidEmail(email)) {
+        displayMessage('Invalid e-mail. Must be like "name@something.com"!', 'addSupplierMessage', 'danger');
         return;
     }
 
@@ -84,8 +86,12 @@ function editSupplier() {
         return;
     }
 
-    if (!isValidCnpj(cnpj) || !isValidEmail(email)) {
-        displayMessage('Invalid CNPJ or e-mail.', 'editSupplierMessage', 'danger');
+    if (!isValidCnpj(cnpj)) {
+        displayMessage('Invalid CNPJ! Must be like "xx.xxx.xxx/xxxx-xx"!', 'editSupplierMessage', 'danger');
+        return;
+    }
+    if (!isValidEmail(email)) {
+        displayMessage('Invalid e-mail. Must be like "name@something.com"!', 'editSupplierMessage', 'danger');
         return;
     }
 
@@ -157,7 +163,7 @@ function getAllSuppliers() {
             console.log('Suppliers:', data);
             let message = 'Suppliers:<ul>';
             data.forEach(supplier => {
-                message += `<li>Name - ${supplier.name}, Email - ${supplier.email}, Description - ${supplier.description}</li>`;
+                message += `<li>CNPJ - ${supplier.cnpj}, ,Name - ${supplier.name}, Email - ${supplier.email}, Description - ${supplier.description}</li>`;
             });
             message += '</ul>';
             displayMessage(message, 'getAllSuppliersMessage');
