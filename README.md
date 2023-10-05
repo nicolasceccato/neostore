@@ -9,7 +9,7 @@ Este projeto é um sistema de gerenciamento de fornecedores que permite aos usu�
 1. **Clonar o Repositório:**
    Clone este repositório em sua máquina local usando o seguinte comando:
 
-   git clone https://github.com/nicolasceccato/neostore
+   git clone https://github.com/nicolasceccato/neostore/tree/main
 
 2. **Configurar o Banco de Dados:**
 - Certifique-se de ter o banco de dados relacional MySQL instalado e em execução.
