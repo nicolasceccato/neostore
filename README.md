@@ -65,3 +65,10 @@ O projeto está estruturado em vários pacotes, cada um com um propósito espec�
 ### Tratamento de Erros
 - O backend trata erros, como entrada inválida ou recurso não encontrado.
 - O frontend também faz tratamento entradas inválidas e apresenta ao usuário.
+
+## Próximos Passos
+
+- Refatorar o frontend para usar o framework JavaScript AngularJS.
+- Implementar listagem de fornecedores paginada.
+- Fazer um serviço de importação de fornecedores a partir de um JSON.
+ 
