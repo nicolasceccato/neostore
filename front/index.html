@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Supplier CRUD Page</title>
+</head>
+
+<body class="container mt-5">
+    <h1>Supplier CRUD Page</h1>
+
+    <div class="mt-4">
+        <h2>Add Supplier</h2>
+        <form id="addSupplierForm">
+            <div class="form-group">
+                <label for="addCnpj">CNPJ:</label>
+                <input type="text" class="form-control" id="addCnpj" required>
+            </div>
+            <div class="form-group">
+                <label for="addName">Name:</label>
+                <input type="text" class="form-control" id="addName" required>
+            </div>
+            <div class="form-group">
+                <label for="addEmail">Email:</label>
+                <input type="email" class="form-control" id="addEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="addDescription">Description:</label>
+                <input type="text" class="form-control" id="addDescription" required>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="addSupplier()">Add Supplier</button>
+            <div id="addSupplierMessage"></div>
+        </form>
+    </div>
+
+    <div class="mt-4">
+        <h2>Edit Supplier</h2>
+        <form id="editSupplierForm">
+            <div class="form-group">
+                <label for="editCnpj">CNPJ:</label>
+                <input type="text" class="form-control" id="editCnpj" required>
+            </div>
+            <div class="form-group">
+                <label for="editName">Name:</label>
+                <input type="text" class="form-control" id="editName">
+            </div>
+            <div class="form-group">
+                <label for="editEmail">Email:</label>
+                <input type="email" class="form-control" id="editEmail">
+            </div>
+            <div class="form-group">
+                <label for="editDescription">Description:</label>
+                <input type="text" class="form-control" id="editDescription">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="editSupplier()">Edit Supplier</button>
+            <div id="editSupplierMessage"></div>
+        </form>
+    </div>
+
+    <div class="mt-4">
+        <h2>Get Supplier</h2>
+        <form id="getSupplierForm">
+            <div class="form-group">
+                <label for="getCnpj">CNPJ:</label>
+                <input type="text" class="form-control" id="getCnpj" required>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="getSupplier()">Get Supplier</button>
+            <div id="getSupplierMessage"></div>
+        </form>
+    </div>
+
+    <div class="mt-4">
+        <h2>Delete Supplier</h2>
+        <form id="deleteSupplierForm">
+            <div class="form-group">
+                <label for="deleteCnpj">CNPJ:</label>
+                <input type="text" class="form-control" id="deleteCnpj" required>
+            </div>
+            <button type="button" class="btn btn-danger" onclick="deleteSupplier()">Delete Supplier</button>
+            <div id="deleteSupplierMessage"></div>
+        </form>
+    </div>
+
+    <div class="mt-4">
+        <h2>Get All Suppliers</h2>
+        <button class="btn btn-primary" onclick="getAllSuppliers()">Get All Suppliers</button>
+        <div id="getAllSuppliersMessage"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
